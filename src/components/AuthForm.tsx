@@ -33,11 +33,11 @@ const AuthForm = ({ type }: Props) => {
       let description;
 
       if (isLoginForm) {
-        errorMessage = (await loginAction(email, password)).error;
+        errorMessage = (await loginAction(email, password)).errorMessage;
         title = "Logged in";
         description = "You have successfully logged in.";
       } else {
-        errorMessage = (await signUpAction(email, password)).error;
+        errorMessage = (await signUpAction(email, password)).errorMessage;
         title = "Signed up";
         description = "Check your email for a confirmation link.";
       }
