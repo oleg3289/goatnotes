@@ -9,7 +9,7 @@ frontend:
       commands:
         - pnpm run build # Build the app
   artifacts:
-    baseDirectory: out # Adjust this if your build output directory differs
+    baseDirectory: .next # Adjust this if your build output directory differs
     files:
       - "**/*"
   cache:
