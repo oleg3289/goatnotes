@@ -7,6 +7,11 @@ frontend:
         - pnpm install --frozen-lockfile # Install dependencies
     build:
       commands:
+        - env | grep -e DATABASE_URL >> .env.production
+        - env | grep -e SUPABASE_URL >> .env.production
+        - env | grep -e SUPABASE_ANON_KEY >> .env.production
+        - env | grep -e NEXT_PUBLIC_BASE_URL >> .env.production
+        - env | grep -e OPENAI_API_KEY >> .env.production
         - pnpm run build # Build the app
   artifacts:
     baseDirectory: .next # Adjust this if your build output directory differs
